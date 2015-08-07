@@ -5,9 +5,20 @@ app.directive('peopleTable', function () {
     return {
 
         restrict: 'E',
-
-        template: '<table class="table table-striped">' +
+                            
+        template:            '<table class="table table-striped">' +
                              '<thead>' +
+                             '<tr>' +
+                             '<td>' +
+                             '<form class="form-horizontal">' +
+                             '<div class="form-group">' +
+                             '<div class="col-md-8">' +
+                             '<input type="text" ng-model="searchText" class="form-control" id="searchInput" placeholder="Search...."/>' +
+                             '</div>' +
+                             '</div>' +
+                             '</form>' +
+                             '</td>' +
+                             '</tr>' +
                              '<tr>' +
                              '<th sort by="order" reverse="reverse" order="\'firstName\'">First Name</th>' +
                              '<th sort by="order" reverse="reverse" order="\'lastName\'">Last Name</th>' +
@@ -16,7 +27,7 @@ app.directive('peopleTable', function () {
                              '</tr>' +
                              '</thead>' +
                              '<tbody>' +
-                             '<tr ng-repeat="person in peopleList | orderBy:order:reverse">' +
+                             '<tr ng-repeat="person in peopleList | orderBy:order:reverse | filter:searchText">' +
                              '<td>{{person.firstName}}</td><td>{{person.lastName}}</td><td>{{person.age}}</td><td>{{person.phoneNumber}}</td>' +
                              '</tr>' +
                              '</tbody>' +
