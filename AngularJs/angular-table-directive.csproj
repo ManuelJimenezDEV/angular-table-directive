@@ -57,6 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\directive\sort-directive.js" />
+    <Content Include="app\directive\table-header-directive.js" />
+    <Content Include="app\service\data-service.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -866,7 +869,7 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\controller\controller.js" />
-    <Content Include="app\directive\directive.js" />
+    <Content Include="app\directive\table-directive.js" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>

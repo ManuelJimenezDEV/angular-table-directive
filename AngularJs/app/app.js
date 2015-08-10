@@ -1,1 +1,3 @@
-var app = angular.module('myApp', []);
+angular.module('myApp', [
+    'myApp.directive.customTable'
+    ]);

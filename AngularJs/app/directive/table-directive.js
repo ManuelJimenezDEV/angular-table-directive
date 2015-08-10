@@ -1,11 +1,13 @@
-var app = angular.module('myApp');
+angular.module('myApp.directive.customTable', ['myApp.directive.tablesorting', 'myApp.controller.peopleController'])
 
-app.directive('peopleTable', function () {
+.directive('peopleTable', function () {
 
     return {
 
         restrict: 'E',
-                            
+
+        replace: true,
+
         template:            '<table class="table table-striped">' +
                              '<thead>' +
                              '<tr>' +
@@ -13,7 +15,7 @@ app.directive('peopleTable', function () {
                              '<form class="form-horizontal">' +
                              '<div class="form-group">' +
                              '<div class="col-md-8">' +
-                             '<input type="text" ng-model="searchText" class="form-control" id="searchInput" placeholder="Search...."/>' +
+                             '<input type="text" ng-model="searchText" class="form-control" id="searchInput" placeholder="Please Search This...."/>' +
                              '</div>' +
                              '</div>' +
                              '</form>' +
@@ -33,46 +35,7 @@ app.directive('peopleTable', function () {
                              '</tbody>' +
                              '</table>',
 
-        controller: "peopleController"
-
-    }
-
-});
-
-app.directive("sort", function () {
-
-    return {
-
-        restrict: 'A',
-
-        transclude: true,
-
-        template: '<a ng-click="onClick()">' +
-                  '<span ng-transclude></span>' +
-                  '<i class="glyphicon" ng-class="{\'glyphicon-sort-by-alphabet\' : order === by && !reverse,  \'glyphicon-sort-by-alphabet-alt\' : order===by && reverse}"></i>' +
-                  '</a>',
-
-        scope: {
-            order: '=',
-            by: '=',
-            reverse: '='
-        },
-
-        link: function (scope, element, attrs) {
-
-            scope.onClick = function () {
-
-                if (scope.order === scope.by) {
-                    scope.reverse = !scope.reverse
-                } else {
-                    scope.by = scope.order;
-                    scope.reverse = false;
-
-                }
-
-            }
-
-        }
+        controller: "peopleController",
 
     }
 
