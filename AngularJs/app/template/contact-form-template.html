@@ -1,0 +1,36 @@
+﻿<form class="form-horizontal" ng-submit="submitContact()">
+    <fieldset>
+        <legend><h2 class=" text-center">
+    Angular-Firebase Contact Form</h2></legend>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="firstName">First Name</label>
+        <div class="col-md-4">
+            <input id="firstName" name="firstName" ng-model="newContact.firstName" placeholder="Enter First Name" class="form-control input-md" type="text" required oninvalid="InvalidMsg(this);">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="lastName">Last Name</label>
+        <div class="col-md-4">
+            <input id="lastName" name="lastName" ng-model="newContact.lastName" placeholder="Enter Last Name" class="form-control input-md" required oninvalid="InvalidMsg(this);" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="age">Age</label>
+        <div class="col-md-4">
+            <input id="age" name="age" placeholder="Enter Age" ng-model="newContact.age" class="form-control input-md" required oninvalid="InvalidMsg(this);" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="phoneNumber">Telephone</label>
+        <div class="col-md-4">
+            <input id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number (xxx-xxx-xxxx)" ng-model="newContact.phoneNumber" class="form-control input-md" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="Send"></label>
+        <div class="col-md-4">
+            <button id="Send" type="submit" name="Send" class="btn btn-info">Save</button>
+        </div>
+    </div>
+    </fieldset>
+</form>

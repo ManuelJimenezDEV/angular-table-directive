@@ -1,55 +1,19 @@
-﻿var app = angular.module('myApp.service.peopleTableData', [])
+﻿angular.module('myApp.service.peopleTableData', ['firebase'])
+    .constant('FIREBASE_URI', 'https://angularcontactlist.firebaseio.com/')
+    .factory('tableData', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseArray, FIREBASE_URI) {
 
-    .service('tableData', function () {
+        var ref = new Firebase(FIREBASE_URI);
+        var contactRef = ref.child('Contacts');
 
-        this.get = function () {
-            return [{
-                firstName: 'John',
-                lastName: 'Smith',
-                age: 25,
-                phoneNumber: '212-555-1243'
+        return {
+
+            allContacts: function () {
+                return $firebaseArray(contactRef);
             },
-                {
-                    firstName: 'John',
-                    lastName: 'Doe',
-                    age: 35,
-                    phoneNumber: '305-456-1354'
-                },
-                {
-                    firstName: 'Michelle',
-                    lastName: 'Perez',
-                    age: 34,
-                    phoneNumber: '412-345-9634'
-                },
-                {
-                    firstName: 'Roberto',
-                    lastName: 'Miranda',
-                    age: 96,
-                    phoneNumber: '262-579-1363'
-                },
-                {
-                    firstName: 'Luis',
-                    lastName: 'Gomez',
-                    age: 39,
-                    phoneNumber: '346-875-7843'
-                },
-                {
-                    firstName: 'Jorge',
-                    lastName: 'Hernandez',
-                    age: 27,
-                    phoneNumber: '236-854-7456'
-                },
-                {
-                    firstName: 'Edgardo',
-                    lastName: 'Lopez',
-                    age: 53,
-                    phoneNumber: '347-234-5778'
-                },
-                {
-                    firstName: 'Carmen',
-                    lastName: 'Rios',
-                    age: 56,
-                    phoneNumber: '234-678-1524'
-                }];
-        };
-    });
+
+            addContact: function (newContact) {
+                return contactRef.push(newContact);
+            }
+        }
+    }
+    ]);
