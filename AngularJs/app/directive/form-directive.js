@@ -7,9 +7,7 @@
 
         replace: true,
 
-        templateUrl: './app/template/contact-form-template.html',
-
-        controller: 'addContactController'
+        templateUrl: './app/directive-templates/contact-form-template.html',
 
     }
 });

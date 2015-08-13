@@ -8,7 +8,7 @@ angular.module('myApp.directive.customTable', ['myApp.directive.tablesorting', '
 
         replace: true,
 
-        templateUrl: './app/template/contact-table-template.html',
+        templateUrl: './app/directive-templates/contact-table-template.html',
 
         controller: "peopleController",
 

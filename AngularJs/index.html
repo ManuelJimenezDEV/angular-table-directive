@@ -2,23 +2,25 @@
 <html ng-app="myApp">
 <head>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
     <title>Custom Table Directive - AngularJS</title>
 </head>
 <body>
     <div class="container">
         <div style="margin-top:30px;" class="panel panel-default">
             <div class="panel-heading">
-                <h3>Custom Table Directive AngularJS with Search and Sorting</h3>
+                <h2 class=" text-center">Angular-Firebase Contact Form</h2>
             </div>
             <div class="panel-body">
                 <people-table></people-table>
-                <contact-form></contact-form>
+                <div ng-view></div>
             </div>
         </div>
     </div>
     <script src="Scripts/jquery-1.9.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/firebase.js"></script>
     <script src="Scripts/angularfire.min.js"></script>
     <script src="app/app.js"></script>
