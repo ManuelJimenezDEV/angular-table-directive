@@ -1,33 +1,26 @@
-﻿<table class="table table-striped">
-    <thead>
-        <tr>
-            <td>
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-md-8">
-                            <input type="text" ng-model="searchText" class="form-control" id="searchInput" placeholder="Please Search This...." />
-                        </div>
-                    </div>
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <th sort by="order" reverse="reverse" order="'firstName'">First Name</th>
-            <th sort by="order" reverse="reverse" order="'lastName'">Last Name</th>
-            <th sort by="order" reverse="reverse" order="'age'">Age</th>
-            <th>Phone Number</th>
-            <th class="text-center">Edit</th>
-            <th class="text-center">Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="person in peopleList | orderBy:order:reverse | filter:searchText">
-            <td>{{person.firstName}}</td>
-            <td>{{person.lastName}}</td>
-            <td>{{person.age}}</td>
-            <td>{{person.phoneNumber}}</td>
-            <td class="text-center"><a href="#/contact/edit/{{person.$id}}" ><i class="fa fa-pencil"></i></a></td>
-            <td class="text-center"><a href="javascript:;" ng-click="deleteContact(person)"><i class="fa fa-trash-o"></i></a></td>
-        </tr>
-    </tbody>
-</table>
+﻿<div class="row">
+    <div id="no-more-tables">
+        <table class="table-striped col-md-12 table-condensed container-fluid">
+            <thead class="container-fluid">
+                <tr>
+                    <th sort by="order" reverse="reverse" order="'firstName'">First Name</th>
+                    <th sort by="order" reverse="reverse" order="'lastName'">Last Name</th>
+                    <th sort by="order" reverse="reverse" order="'age'">Age</th>
+                    <th>Phone Number</th>
+                    <th class="text-center">Edit</th>
+                    <th class="text-center">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in peopleList | orderBy:order:reverse | filter:searchText">
+                    <td data-title="First Name">{{person.firstName}}</td>
+                    <td data-title="Last Name">{{person.lastName}}</td>
+                    <td data-title="Age">{{person.age}}</td>
+                    <td data-title="Phone Number">{{person.phoneNumber | tel}}</td>
+                    <td data-title="Edit" class="text-center"><a href="#/contact/edit/{{person.$id}}"><i class="fa fa-pencil"></i></a></td>
+                    <td data-title="Delete" class="text-center"><a href="javascript:;" ng-click="deleteContact(person)"><i class="fa fa-trash-o"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,4 +1,9 @@
-var app = angular.module('myApp', ["ngRoute","myApp.directive.customTable","myApp.directive.customForm"]);
+var app = angular.module('myApp', ["ngRoute",
+    "myApp.directive.onlyNumbers",
+    "ui.mask",
+    "myApp.filter.phoneNumber",
+    "myApp.directive.customTable",
+    "myApp.directive.customForm"]);
 
 app.config(["$routeProvider", function($routeProvider) {
     $routeProvider.when("/",{

@@ -3,6 +3,9 @@
 <head>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Content/table.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Custom Table Directive - AngularJS</title>
 </head>
 <body>
@@ -12,6 +15,20 @@
                 <h2 class=" text-center">Angular-Firebase Contact Form</h2>
             </div>
             <div class="panel-body">
+                <div style="margin-bottom:10px;" class="row">
+                    <div class="col-md-4 pull-right">
+                        <div id="custom-search-input">
+                            <div class="input-group col-md-10">
+                                <input type="text" id="searchInput" ng-model="searchText" class="form-control input-md" placeholder="Please Search This...." />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info btn-md" type="button" />
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <people-table></people-table>
                 <div ng-view></div>
             </div>
@@ -29,5 +46,8 @@
     <script src="app/directive/table-directive.js"></script>
     <script src="app/directive/sort-directive.js"></script>
     <script src="app/directive/form-directive.js"></script>
+    <script src="app/directive/number-only-directive.js"></script>
+    <script src="app/directive/mask-directive.js"></script>
+    <script src="app/filters/phone-filter.js"></script>
 </body>
 </html>

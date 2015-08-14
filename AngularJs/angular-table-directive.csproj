@@ -58,8 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\directive\form-directive.js" />
+    <Content Include="app\directive\mask-directive.js" />
+    <Content Include="app\directive\number-only-directive.js" />
+    <Content Include="app\directive\phone-number-directive.js" />
     <Content Include="app\directive\sort-directive.js" />
     <Content Include="app\directive\table-header-directive.js" />
+    <Content Include="app\filters\phone-filter.js" />
     <Content Include="app\partial-views\form-view.html" />
     <Content Include="app\service\data-service.js" />
     <Content Include="app\directive-templates\contact-form-template.html" />
@@ -70,6 +74,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\table.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\angular-animate.js" />
@@ -855,6 +860,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\angular-firebase.pubxml" />
     <None Include="Properties\PublishProfiles\Angular.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
